@@ -1,0 +1,148 @@
+<html>
+<head>
+
+<script src="jquery-1.12.2.min.js"></script>
+<script>
+//http://www.c-sharpcorner.com/UploadFile/cd7c2e/get-values-from-query-string-using-jquery/
+$(document).ready(function() {
+var school_id = GetParameterValues('school_id');   // read query string
+if(school_id==""){
+$("#shcoolname").text("Error in request");                // if query string have null or no value
+
+// for demo code added
+$("#temperature_value").text('15');
+
+return;	                           // do not go ahead to execute code
+}
+    var myItems;
+
+    $.getJSON('https://raw.githubusercontent.com/ClydeDz/UVX/master/api/schools.json', function(data) {
+        myItems = data[school_id-1];
+		$("#shcoolname").text(myItems.schoolName);
+       // document.write(myItems.schoolName);
+    });
+	
+});
+
+function GetParameterValues(param) {  
+            var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');  
+            for (var i = 0; i < url.length; i++) {  
+                var urlparam = url[i].split('=');  
+                if (urlparam[0] == param) {  
+                    return urlparam[1];  
+                }  
+            }  
+        }  
+</script>
+<style>
+.row1{
+height:20%;
+width:100%;
+}
+.row2{
+height:60%;
+width:100%;
+}
+.row3{
+height:20%;
+width:100%;
+}
+.one{
+height:100%;
+width:100%;
+margin-left:auto;
+background-color:blue;
+margin-right:auto;
+}
+.two{
+height:100%;
+width:50%;
+background-color:blue;
+display:inline-block;
+}
+.three{
+height:100%;
+width:50%;
+background-color:yellow;
+display:inline-block;
+}
+.four{
+height:100%;
+width:50%;
+background-color:;
+display:inline-block;
+}
+.five{
+height:100%;
+width:40%;
+background-color:;
+display:block;
+margin-right:0;
+}
+.contain{
+max-height:100vh;
+width:100%;
+}
+
+.row1 .one p{
+	font-size: 38px;
+   float:left;
+   margin:0px;
+   display:inline-block;
+background-color:green;	
+}
+
+.row1 .one span{
+float:left;
+
+background-color:silver;	
+}
+
+.row2 .three p.r{
+	font-size: 15vh;
+	background-color:red;
+	text-align:center;
+	display:block;
+	float:center;
+	margin: 0px auto;
+}
+
+
+
+.row2 .three p span{font-size: 13vh;}
+body{font-family:Calibri Light; background-color:orange;}
+
+</style>
+</head>
+<body>
+<!--
+body{
+
+background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(red, orange); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(red, orange); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(red, orange); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(red, orange); /* Standard syntax */
+
+}-->
+<div class="contain">
+	<div class="row1">
+	<div class="one">
+	<div>Current Conditions for</div>
+		<p id="shcoolname"></p>
+	</div>
+	</div>
+	<div class="row2">
+	<div class="three">
+	
+	<p  class="r" ><span id="temperature_value">15</span> &deg;</p>
+	
+	</div>
+	<div class="four"></div>
+	</div>
+	<div class="row3">
+	<div class="five"></div>
+	</div>
+<div>
+</body>
+</html>
