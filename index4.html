@@ -35,87 +35,88 @@ function GetParameterValues(param) {
         }  
 </script>
 <style>
+
+body{font-family:Calibri Light;}
 .row1{
 height:20%;
+margin-top:2%;
 width:100%;
+display:block;
+background-color:green;
 }
+.contain{
+max-height:100vh;
+width:98%;
+margin-left:2%;
+}
+body{background-color:gray; color:white;overflow: hidden;}
+#school_name{
+	font-size:20px;
+	font-family:Calibri Light;
+}
+
 .row2{
-height:60%;
+height:18%;
 width:100%;
+display:inline-block;
+background-color:yellow;
 }
+
 .row3{
 height:20%;
 width:100%;
+display:inline-block;
+background-color:violet;
 }
-.one{
-height:100%;
+
+.row3{
+height:20%;
 width:100%;
-margin-left:auto;
-background-color:blue;
-margin-right:auto;
-}
-.two{
-height:100%;
-width:50%;
-background-color:blue;
 display:inline-block;
+background-color:violet;
 }
-.three{
-height:100%;
-width:30%;
-background-color:yellow;
+
+.row4{
+height:20%;
+width:100%;
 display:inline-block;
+background-color:#cded45;
+font-size:103%;
+margin-top:2%;
 }
-.four{
-height:100%;
-width:50%;
+
+.row5{
+height:15%;
+width:100%;
+display:inline-block;
 background-color:;
+font-size:103%;
+margin-top:2%;
+}
+
+.row5 img{}
+.row5 .r1{
 display:inline-block;
+background-color:#4455cd;
 }
-.five{
-height:100%;
-width:40%;
-background-color:;
-display:block;
-margin-right:0;
-}
+.row5 .r1 div{text-align:right;font-size:12px;}
+.row5  img{height:100%;width:100px;}
+
+.row3 img{ height:100%;background-color:red;float:center;}
+
+.contain .row2  img{height:100%;margin-left:0%;}
+.contain .row2  span{font-size:29px;background-color:red;width:60%;text-align:center;display:inline-block;}
+
 .contain{
 max-height:100vh;
 width:100%;
 }
-
-.row1 .one p{
-	font-size: 24px;
-   float:left;
-   margin:0px;
-   display:inline-block;
-background-color:green;	
-}
-
-.row1 .one span{
-float:left;
-
-background-color:silver;	
-}
-
-.row2 .three p.r{
-	font-size: 24px;
-	background-color:red;
-	text-align:center;
-	display:block;
-	float:center;
-	margin: 0px auto;
-}
-
-
-
-.row2 .three p span{font-size: 13vh;}
-body{font-family:Calibri Light; background-color:orange; overflow: hidden;}
-
 </style>
 </head>
 <body>
 <!--
+.contain .row2  #uv_image{height:100%;margin-left:0px;background-color:red;}
+.contain .row2 div.right #message{ font-size:22px;}
 body{
 
 background: red; /* For browsers that do not support gradients */
@@ -127,23 +128,30 @@ background: red; /* For browsers that do not support gradients */
 }-->
 <div class="contain">
 	<div class="row1">
-	<div class="one">
-	<!-- <div>Current Conditions for</div>  -->
-		<p id="shcoolname"></p>
-	</div>
+		<div id="school_name">Name of school abc	dfskj</div>
 	</div>
 	<div class="row2">
-	<img src="uv-icon-gray.png"  style="width:40%;" class="three" />
-	<!-- <div class="three"> -->
-	
-	<!--
-	<p  class="r" ><span id="temperature_value">15 &deg; C</span> </p>
-	-->
-	<!-- </div> -->
-	<div class="four"></div>
+		<img src="uv-icon-gray.png" align="left" id="uv_image" ><span>Moderage</span>
 	</div>
 	<div class="row3">
-	<div class="five"></div>
+		<img src="flames_2.png">
+	</div>
+	<div class="row4" id="message">
+		Remember to cover up!
+	</div>
+	<div class="row5" id="message">
+	
+		<div class="r1">
+				<div>Last Updated:</div>
+				<div>00:00 pm</div>
+		</div>
+		<div class="r1">
+				<div>Powerd</div>
+				<div>By</div>
+		</div>
+		
+				<img src="uvlens_logo.png">
+		
 	</div>
 <div>
 </body>
